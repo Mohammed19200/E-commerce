@@ -1,0 +1,108 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    color: white;
+    padding: 0.7rem;
+    border-radius: 1rem;
+}
+
+.box:hover {
+    box-shadow: 0 10px 13px 0 rgba(255, 166, 0, 0.529),0 12px 30px 0 rgba(255, 166, 0, 0.332);
+  }
+
+.timer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.timerdiv {
+    padding: 2rem 0rem;
+}
+
+.bigestdivtimer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    transition: background-color 1s ease;
+}
+
+.bigestdivtimer:hover {
+    background-color: rgba(255, 166, 0, 0.156);
+  }
+
+.descriptiontimer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.fulldivtimer {
+    padding-bottom: 2rem;
+}
+
+.h1timmer {
+    color: white;
+    background-color: orange;
+    padding: 0.7rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    font-size: 1.2rem !important;
+}
+
+.bigdivh1timer {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0rem;
+}
+
+.imgstyletimer {
+    object-fit: contain;
+    height: 400px;
+}
+
+/* media screen */
+@media screen and (min-width: 1600px) {
+    .imgstyletimer {
+        object-fit: contain;
+        height: 800px;
+    }
+}
+
+@media screen and (max-width: 767.5px) {
+    .bigestdivtimer {
+        padding: 1rem 0rem;
+    }
+
+    .imgstyletimer {
+        object-fit: scale-down;
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 425.5px) {
+    .imgstyletimer {
+        object-fit: contain;
+        height: 300px;
+    }
+}

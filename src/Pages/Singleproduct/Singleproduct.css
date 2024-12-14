@@ -1,0 +1,160 @@
+.divproduct {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.fontawsome {
+    color: orange;
+    text-align: center;
+}
+
+.spanrating {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.3rem;
+    color: black !important;
+}
+
+.buttonadd {
+    border-radius: 1rem;
+    outline: 0;
+    border: 0;
+    background-color: orange;
+    color: white;
+    padding: 0.5rem 1rem;
+}
+
+.buttonadd:hover {
+    border: 1px solid orange;
+    background: none;
+    color: black;
+}
+
+.productdetails {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.bigdiv{
+    padding: 1rem 0rem;
+}
+
+.divbuttonssingleproduct{
+    background-color: orange;
+    border-radius: 2rem;
+}
+
+.buttonssinleproduct {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: orange;
+    /* border-radius: 2rem; */
+}
+
+.IconsCardsingleproduct {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 1rem;
+    outline: 0;
+    border: 0;
+    background-color: orange;
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+}
+
+.IconsCardsingleproduct:hover {
+    border: 0.01px solid orange;
+    background: none;
+    color: black;
+}
+
+.AddToCartandfavoritestyles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.wishlisticon {
+    color: black;
+    font-size: 1.3rem;
+}
+
+.wishlisticon:hover {
+    color: orange;
+    font-size: 1.3rem;
+}
+
+.wishlistdiv {
+    outline: 0;
+    border: 0;
+    background-color: orange;
+    color: white;
+    text-decoration: none;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+}
+
+.wishlistdiv:hover {
+    border: 0.01px solid orange;
+    background: none;
+    color: black;
+}
+
+/* media screen */
+@media screen and (max-width: 767.5px) {
+    .title {
+        text-align: center;
+    }
+
+    .decription {
+        text-align: center;
+    }
+    
+    .IconsCardsingleproduct {
+        font-size: 0.8rem;
+    }
+    
+    .AddToCartandfavoritestyles {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        margin: auto;
+        align-content: center;
+    }
+}

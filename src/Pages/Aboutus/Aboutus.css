@@ -1,0 +1,88 @@
+.bigdivExplainAboutus{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 0rem;
+}
+
+.divExplainAboutus{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 1rem;
+}
+
+.h1Aboutus{
+   color: var(--ltn__heading-color);
+}
+
+.PAboutus{
+    color: var(--ltn__paragraph-color);
+}
+
+.ImgAboutus{
+border-radius: 1.5rem;
+}
+
+.divVideosAboutus{
+    padding: 2rem 0rem;
+}
+
+.VideosAboutus{
+    border-radius: 1.5rem !important;   
+    height: 550px;
+}
+
+.bigdivteamAboutus{
+    padding: 2rem 0rem;
+    }
+    
+    .divteamaboutas{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        gap: 3rem;
+    }
+    
+    .teamdiv{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        gap: 0.1rem;
+    }
+
+.h1team:hover{
+color: orange;
+cursor: pointer;
+}
+
+.slick-prev:before,
+.slick-next:before {
+color: orange;
+font-size: 1.5rem;
+}
+
+/* media screen */
+@media screen and (max-width: 600.5px) {
+    .VideosAboutus{
+        height: 350px;
+    }
+  }
+
+  @media screen and (max-width: 768.5px) {
+    .h1reviewAboutus {
+        font-size: 20px !important;
+    }
+    .h4nameAboutus {
+        font-size: 1.2rem;
+    }
+  }

@@ -1,0 +1,40 @@
+.divterms {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    padding: 0.3rem 0rem;
+    gap: 1rem;
+}
+
+.h6terms{
+    color: #333e48;
+    font-weight: 400;
+}
+
+.bigdivTermsConditions{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0rem;
+
+}
+
+.h1Terms{
+    font-weight: 700;
+}
+
+.spanterms{
+    color: black;
+    font-weight: 600;
+}
+
+.spanterms:hover{
+    color: orange;
+    cursor: pointer;
+}

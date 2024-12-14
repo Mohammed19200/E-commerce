@@ -1,0 +1,77 @@
+.loginform {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: auto;
+}
+
+.errorsdiv {
+    background-color: orange;
+    border-radius: 1rem;
+    margin: auto;
+}
+
+.showerror {
+    text-align: center;
+    padding: 0.5rem;
+    color: white !important;
+    font-size: 0.9rem !important;
+}
+
+.inputstyle {
+    border-radius: 1rem !important;
+    margin-bottom: 0.4rem;
+}
+
+.bigdivlogin {
+    margin: auto;
+    padding: 8rem 0rem;
+    background-image: url('../../assets/loginbackground.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.formloginstyle {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: auto;
+    border: 1px solid orange;
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+.form-control:focus {
+    color: var(--bs-body-color) !important;
+    border-color: orange !important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 0.25rem rgba(255, 166, 0, 0.281) !important;
+}
+
+.btn:hover {
+    color: var(--bs-btn-hover-color);
+    background-color: rgba(255, 166, 0, 0.903);
+    border-color: var(--bs-btn-hover-border-color);
+}
+
+.btn {
+    background-color: orange;
+    border: 0;
+    outline: 0;
+}
+
+.btn:disabled,
+.btn.disabled,
+fieldset:disabled .btn {
+    color: var(--bs-btn-disabled-color);
+    pointer-events: none;
+    background-color: orange;
+    opacity: var(--bs-btn-disabled-opacity);
+}

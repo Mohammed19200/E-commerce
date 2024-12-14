@@ -1,0 +1,10 @@
+.Popularproduct {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 1rem;
+    justify-content: center;
+}

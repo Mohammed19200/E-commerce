@@ -1,0 +1,104 @@
+.cardstyle {
+    border: 0 !important;
+    padding: 0.8rem;
+    position: relative;
+
+    .buttonss {
+        display: none;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        position: absolute;
+        top: 19px;
+        right: 8px;
+        gap: 1rem;
+    }
+
+    .IconsCard {
+        display: none;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.2rem;
+        font-size: 1rem;
+        border-radius: 1rem;
+        outline: 0;
+        border: 0;
+        background-color: orange;
+        color: white;
+        text-decoration: none;
+        padding: 0.6rem;
+    }
+}
+
+.cardstyle:hover {
+    border: solid 1.5px orange !important;
+    border-radius: 1.5rem;
+
+    .buttonss {
+        display: flex;
+    }
+
+    .IconsCard {
+        display: flex;
+    }
+}
+
+.linksinglepage {
+    text-decoration: none !important;
+}
+
+.fontawsome {
+    color: orange;
+    text-align: center;
+}
+
+.spanrating {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.3rem;
+    color: black !important;
+}
+
+.spandiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.bigdiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.category {
+    color: orange !important;
+    font-size: 0.9rem !important;
+    text-align: center;
+}
+
+.titleshop {
+    font-size: 1rem !important;
+    color: black !important;
+    font-weight: 400 !important;
+    text-align: center;
+}
+
+.price {
+    color: black !important;
+}
+
+.IconsCard:hover {
+    border: 1px solid orange;
+    background: none;
+    color: orange;
+}

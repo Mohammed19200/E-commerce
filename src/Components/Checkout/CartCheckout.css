@@ -1,0 +1,43 @@
+.BigestDivCheckout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 2rem 0rem;
+  align-items: flex-start;
+}
+
+/* media screen */
+@media screen and (max-width: 991.5px) {
+  .thImage,
+  .thName,
+  .thPrice,
+  .thCount,
+  .thTotal {
+    font-size: 0.7rem;
+  }
+
+  .tdtitle {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .tdprice,
+  .tdtotal {
+    font-size: 0.8rem;
+  }
+
+  .BigestDivCheckout {
+    gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .FirstdivCHeckout {
+    padding: 0rem 0.8rem;
+  }
+
+  .SeconddivCHeckout {
+    padding: 0rem 1rem;
+  }
+}

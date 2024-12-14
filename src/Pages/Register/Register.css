@@ -1,0 +1,51 @@
+.registerform {
+    margin: auto;
+}
+
+.formregisterstyle {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.1rem;
+    margin: auto;
+    border: 1px solid orange;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+.errorsdiv {
+    background-color: orange;
+    border-radius: 1rem;
+    margin: auto;
+}
+
+.showerror {
+    text-align: center;
+    padding: 0.5rem;
+    color: white !important;
+    font-size: 0.9rem !important;
+}
+
+.inputstyle{
+    border-radius: 1rem !important;
+    margin-bottom: 0.4rem;
+}
+
+.bigdivregister{
+    margin: auto;
+    padding: 8rem 0rem;
+    background-image: url('../../assets/loginbackground.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.spanloginandregisterstyle{
+    color: orange;
+    }
+
+.spanloginandregisterstyle:hover{
+color: rgba(255, 166, 0, 0.601);
+cursor: pointer;
+}

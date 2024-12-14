@@ -1,0 +1,58 @@
+.FAQbigdiv{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    align-items: flex-start;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.secondbigdivFAQ{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.bigseconddivFAQ{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1rem 0rem;
+}
+
+.CaardStyle{
+border: 1px solid orange ;
+border-radius: 0.5rem;
+}
+
+.thebigestdivFaq{
+    padding: 1rem 0rem;
+}
+
+.CContactusdiv{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 0rem;
+}
+
+.buttonCContact{
+    padding: 0.8rem 1rem;
+}
+
+.h1CContact{
+    font-size: 1.3rem;
+}
+
+.h4CContact:hover{
+    color: orange;
+    cursor: pointer;
+}

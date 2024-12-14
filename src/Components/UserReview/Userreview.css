@@ -1,0 +1,46 @@
+.h1reviewAboutus {
+    text-align: center;
+    font-size: 27px !important;
+    font-weight: 400;
+}
+
+.divUserReview {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+    align-content: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: #ebebeb;
+    border-radius: 1rem;
+    gap: 1rem !important;
+}
+
+.h1iconAboutus {
+    text-align: center;
+}
+
+.h4nameAboutus {
+    text-align: center;
+}
+
+.bigdivsliderUserReview{
+    padding: 1rem 0rem ;
+}
+
+.bigdivUserReview{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0rem;
+}
+
+@media screen and (min-width: 768px) {
+    .divUserReview {
+        padding: 1rem 0rem !important;
+    }
+}

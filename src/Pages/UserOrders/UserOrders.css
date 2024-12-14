@@ -1,0 +1,53 @@
+.Bigestdivorders {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.181);
+}
+
+.firstdivOrders {
+  border-right: 1px solid rgba(0, 0, 0, 0.181);
+}
+
+.spanOrders {
+  color: orange;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+.h1OOrders {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+/* Media Screen */
+@media screen and (max-width: 991.5px) {
+  .firstdivOrders {
+    border-right: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 166, 0, 0.566);
+    padding: 1rem 0rem;
+    border-radius: 1rem;
+  }
+
+  .h1OOrders {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+
+  .spanOrders {
+    color: orange;
+    font-weight: 400;
+    font-size: 1.1rem;
+  }
+}

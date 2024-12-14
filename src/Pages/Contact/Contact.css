@@ -1,0 +1,132 @@
+.divInfoContact {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .divInfo {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  
+  .h1Contact {
+    font-size: 18px;
+    color: orange;
+  }
+  
+  .spanContact {
+    color: #444;
+  }
+  
+  .h6Contact {
+    font-size: 15px;
+  }
+  
+  .bigdivInfoContact {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0rem;
+    gap: 1rem;
+    background-color: #ffffff;
+  }
+  
+  .H1Infobig {
+    text-align: center;
+    color: #323232;
+    font-size: 30px;
+  }
+  
+  .pInfobig {
+    text-align: center;
+    padding-bottom: 0.5rem;
+    font-size: 15px;
+    color: #444;
+  }
+  
+  .twoinputsstyle{
+    display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: center;
+      align-items: center;
+      justify-content: space-between;
+      
+  }
+  
+  .formstyleContact{
+    display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+      gap: 0.5rem;
+  }
+  
+  .FormDisplaystyle{
+    padding: 2rem 0rem;
+  }
+  
+  .iframestyle{
+    padding: 2rem 0rem;
+  }
+  
+  .mapContact{
+    border-radius: 1.5rem !important;   
+    height: 550px;
+}
+
+  /* media screen */
+  @media screen and (max-width: 991.5px) {
+  
+    .divInfo {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: center;
+      align-items: center;
+  }
+  
+  .divInfoContact {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .H1Infobig {
+    font-size: 20px;
+  }
+  
+  .pInfobig {
+    font-size: 13px;
+  }
+  
+  .h6Contact {
+    text-align: center;
+    font-size: 0.9rem;
+}
+  
+  .h1Contact {
+    font-size: 14px;
+}
+
+  }
+
+  @media screen and (max-width: 600.5px) {
+    .mapContact{
+        height: 350px;
+    }
+  }

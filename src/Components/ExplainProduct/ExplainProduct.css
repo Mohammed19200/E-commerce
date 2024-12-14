@@ -1,0 +1,48 @@
+.bigdivexplainproduct{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0rem;
+}
+
+.seconddivdescriptionexplainproduct {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+/* media screen */
+@media screen and (max-width:767.5px) {
+    
+    .bigdivexplainproduct {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        gap: 0rem;
+    }
+
+    .seconddivdescriptionexplainproduct {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        gap: 0.9rem;
+    }
+
+    .pExplain{
+        text-align: center;
+    }
+}
