@@ -7,25 +7,25 @@ import Slider from "react-slick";
 import { CartOperations } from "../../Context/CartOperations";
 import { FaCartPlus } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
-import { toast } from "react-toastify";
 import { FavoriteOperations } from "../../Context/FavoriteOperations";
 import Swal from "sweetalert2";
 import "./Singleproduct.css";
 
 export default function Singleproduct() {
   const [showProduct, setshowProduct] = useState({});
-  const [cartItem, setcartItem] = useState();
   const [loading, setloading] = useState(true);
   let { AddToFavorite } = useContext(FavoriteOperations);
-  const { addtocart, getcartdata, deleteproductitem } =
-    useContext(CartOperations);
+  const { addtocart, getcartdata } = useContext(CartOperations);
   let { id } = useParams();
   console.log(id);
 
   async function AddCartItem(id) {
     let { data } = await addtocart(id);
     if (data?.status == "success") {
-      toast.success(data?.message);
+      Swal.fire({
+        text: "This Product Added Successfully To Your Cart",
+        icon: "success",
+      });
     }
     console.log(data);
   }
@@ -33,36 +33,17 @@ export default function Singleproduct() {
   async function GetCartData() {
     let { data } = await getcartdata();
     if (data) {
-      setcartItem(data);
       setloading(false);
-    } else {
-      setloading(true);
     }
-  }
-
-  async function DeleteProduct(id) {
-    setloading(true);
-    let { data } = await deleteproductitem(id);
-
-    Swal.fire({
-      title: "Do you want to delete this product ?",
-      showCancelButton: true,
-      confirmButtonText: "Delete",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        if (data?.status == "success") {
-          Swal.fire("this product is deleted successfully", "", "success");
-          setcartItem(data);
-          setloading(false);
-        }
-      }
-    });
   }
 
   async function addtowishlist(id) {
     let { data } = await AddToFavorite(id);
     if (data?.status == "success") {
-      toast.success(data?.message);
+      Swal.fire({
+        text: "This Product Added Successfully To Your Favorite",
+        icon: "success",
+      });
     }
     console.log(data);
   }

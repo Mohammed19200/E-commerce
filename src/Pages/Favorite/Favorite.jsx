@@ -7,7 +7,6 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import { CartOperations } from "../../Context/CartOperations";
-import { toast } from "react-toastify";
 
 export default function Favorite() {
   const [loading, setloading] = useState(true);
@@ -18,7 +17,10 @@ export default function Favorite() {
   async function AddCartItem(id) {
     let { data } = await addtocart(id);
     if (data?.status == "success") {
-      toast.success(data?.message);
+      Swal.fire({
+        text: "This Product Added Successfully To Your Cart",
+        icon: "success",
+      });
     }
     console.log(data);
   }
@@ -28,13 +30,10 @@ export default function Favorite() {
     if (data) {
       setfavoriteItem(data);
       setloading(false);
-    } else {
-      setloading(true);
     }
   }
 
   async function DeletePrroduct(id) {
-    setloading(true);
     let { data } = await DeleteProductItem(id);
     console.log(data);
 
@@ -50,7 +49,6 @@ export default function Favorite() {
           setloading(false);
         }
       }
-      setloading(false);
     });
   }
 

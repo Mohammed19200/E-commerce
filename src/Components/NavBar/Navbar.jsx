@@ -9,44 +9,17 @@ import { MdHome } from "react-icons/md";
 import { FaShopify } from "react-icons/fa6";
 import { MdFindInPage } from "react-icons/md";
 import { IoMdArrowRoundDown } from "react-icons/io";
-import { CartOperations } from "../../Context/CartOperations";
-import { FavoriteOperations } from "../../Context/FavoriteOperations";
 import { toast } from "react-toastify";
 import { MdLogout } from "react-icons/md";
 import login from "../../assets/login (1).png";
 import register from "../../assets/register.png";
+import Swal from "sweetalert2";
 
 export default function Navtest() {
-  const { getcartdata } = useContext(CartOperations);
-  let { GetData } = useContext(FavoriteOperations);
   let CartOwner = localStorage.getItem("cartOwner");
-
-  const [cartItem, setcartItem] = useState();
-  const [favoriteItem, setfavoriteItem] = useState();
 
   const { usertoken, setusertoken } = useContext(Usercontext);
   let navigate = useNavigate();
-
-  async function Items() {
-    let { data } = await getcartdata();
-    if (data) {
-      setcartItem(data?.numOfCartItems);
-    }
-  }
-
-  async function getdata() {
-    let { data } = await GetData();
-    if (data) {
-      if (data?.count) {
-        setfavoriteItem(data?.count);
-      }
-    }
-  }
-
-  useEffect(() => {
-    Items();
-    getdata();
-  }, []);
 
   function logout() {
     localStorage.removeItem("userToken");
@@ -56,7 +29,10 @@ export default function Navtest() {
     localStorage.removeItem("cartOwner");
     setusertoken("");
     navigate("/");
-    toast.success("You Logged out Successfully");
+    Swal.fire({
+      text: `You Logged out Successfully.`,
+      icon: "success",
+    });
   }
 
   return (
@@ -104,21 +80,18 @@ export default function Navtest() {
                 onClick={() => {
                   navigate("/cart");
                 }}
-                className="divlinkNavbarshopping"
+                className="divlinkNavbar"
               >
-                <FaShoppingCart className="" />{" "}
-                <h1 className="h6 h1cartt">{cartItem != 0 ? cartItem : 0}</h1>
+                <FaShoppingCart />
               </div>
+
               <div
                 onClick={() => {
                   navigate("/favorite");
                 }}
-                className="divlinkNavbarshopping"
+                className="divlinkNavbar"
               >
-                <MdFavoriteBorder className="" />{" "}
-                <h1 className="h6 h1cartt">
-                  {favoriteItem != 0 ? favoriteItem : 0}
-                </h1>
+                <MdFavoriteBorder />
               </div>
 
               <div className="nav-item dropdown">
@@ -178,7 +151,6 @@ export default function Navtest() {
                     <Link className="linkpagesdropdown" to="*">
                       Error404
                     </Link>
-
                   </div>
                 </div>
               </div>

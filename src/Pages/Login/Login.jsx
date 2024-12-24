@@ -6,9 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { Usercontext } from "../../Context/UserToken";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 export default function Login() {
-
   let Navigate = useNavigate();
   let { setusertoken } = useContext(Usercontext);
 
@@ -16,7 +16,10 @@ export default function Login() {
     let { data } = await axios
       .post(`https://ecommerce.routemisr.com/api/v1/auth/signin`, values)
       .catch((err) => {
-        alert(err.response.data.message);
+        Swal.fire({
+          text: `${err.response.data.message}`,
+          icon: "error",
+        });
       });
 
     if (data.message == "success") {
@@ -24,9 +27,10 @@ export default function Login() {
       localStorage.setItem("userInfo", data.user.name);
       setusertoken(data.token);
       Navigate("/");
-      toast.success(
-        `Welcome to our website, ${localStorage.getItem("userInfo")}.`
-      );
+      Swal.fire({
+        text: `Welcome to our website, ${localStorage.getItem("userInfo")}.`,
+        icon: "success",
+      });
     }
   }
 

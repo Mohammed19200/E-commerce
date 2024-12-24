@@ -5,7 +5,6 @@ import { ProductOperations } from "../../Context/ProductOperations";
 import "./Shop.css";
 
 export default function Shop() {
-  
   const [products, setproducts] = useState([]);
   const [loading, setloading] = useState(true);
   const [inputvalue, setinputvalue] = useState("");
@@ -42,7 +41,7 @@ export default function Shop() {
         ) : (
           <div className="col-12 cardshopp wow animate__animated animate__fadeInDownBig animate__slow">
             <div className="col-12">
-              <div className="col-7 m-auto">
+              <div className="col-11 col-sm-10 col-lg-8 m-auto">
                 <input
                   onChange={(e) => setinputvalue(e.target.value)}
                   className="form-control col-12"

@@ -19,18 +19,15 @@ export default function Cart() {
   async function Items() {
     let { data } = await getcartdata();
     console.log(data);
-    localStorage.setItem("cartId", data?.cartId);
-    localStorage.setItem("cartOwner", data?.data?.cartOwner);
     if (data) {
+      localStorage.setItem("cartId", data?.cartId);
+      localStorage.setItem("cartOwner", data?.data?.cartOwner);
       setcartItem(data);
       setloading(false);
-    } else {
-      setloading(true);
     }
   }
 
   async function DeleteProduct(id) {
-    setloading(true);
     let { data } = await deleteproductitem(id);
 
     Swal.fire({
@@ -45,16 +42,14 @@ export default function Cart() {
           setloading(false);
         }
       }
-      setloading(false);
     });
   }
 
   async function UpdateQuantity(id, count) {
     if (count < 1) {
-      DeleteProduct(id);
+      await DeleteProduct(id);
       setloading(false);
     } else {
-      setloading(true);
       let { data } = await updatequantity(id, count);
       if (data) {
         setcartItem(data);

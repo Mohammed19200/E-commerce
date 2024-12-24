@@ -23,7 +23,7 @@ export default function LatestProducts() {
     slidesToScroll: 4,
     autoplay: true,
     autoplayspeed: 600,
-    arrows: true,
+    arrows: false,
     initialSlide: 0,
     responsive: [
       {

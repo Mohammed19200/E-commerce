@@ -8,12 +8,13 @@ import ProductCard from "../../Components/ProductCard/ProductCard";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { BallTriangle } from "react-loader-spinner";
-
+import Swal from "sweetalert2";
 
 export default function Categories() {
   let { getcategories } = useContext(ProductOperations);
   const [category, setcategory] = useState([]);
   const [specificcategory, setspecificcategory] = useState([]);
+  const [inputvalue, setinputvalue] = useState("");
   const [loading, setloading] = useState(true);
 
   function ShowData() {
@@ -40,6 +41,11 @@ export default function Categories() {
       return product.category.name == name;
     });
     setspecificcategory(CartData);
+    if (CartData.length == 0) {
+      if (specificcategory.length == 0) {
+        Swal.fire("Products in this category will be available soon.");
+      }
+    }
   }
 
   var settings = {
@@ -50,7 +56,7 @@ export default function Categories() {
     slidesToScroll: 4,
     autoplay: true,
     autoplayspeed: 600,
-    arrows: true,
+    arrows: false,
     initialSlide: 0,
     responsive: [
       {
@@ -117,7 +123,7 @@ export default function Categories() {
                 <Card key={categorey._id} className="CardStyleCategories">
                   <Card.Img
                     className=""
-                    height={200}
+                    height={250}
                     variant="top"
                     src={categorey.image}
                     alt={categorey.name}
@@ -139,47 +145,45 @@ export default function Categories() {
             })}
           </Slider>
 
-          <div
-            className="modal fade col-12"
-            id="staticBackdrop"
-            data-bs-keyboard="false"
-            tabIndex="-1"
-            aria-labelledby="staticBackdropLabel"
-            aria-hidden="true"
-          >
-            <div className=" modal-dialog modal-xl col-11 col-md-11 col-lg-10 m-auto">
-              <div className="modal-content col-12">
-                <div className="modal-header">
+          {specificcategory.length == 0 ? (
+            ""
+          ) : (
+            <div className="col-12 cardshopp wow animate__animated animate__fadeInRightBig animate__slow">
+              <div className="col-12">
+                <div className="col-11 col-sm-10 col-lg-8 m-auto d-flex flex-column justify-content-center align-content-center align-items-center">
                   <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div className="modal-body col-12">
-                  <div className="col-12 cardshopp wow animate__animated animate__fadeInRightBig animate__slow">
-                    {specificcategory.length == 0 ? (
-                      <h1 className="h5">
-                        Products in this category will be available soon.
-                      </h1>
-                    ) : (
-                      specificcategory.map((product) => {
-                        return (
-                          <div
-                            className="col-10 col-sm-5 col-md-4 col-lg-3 col-xl-2"
-                            key={`products-shop-${product.id}`}
-                          >
-                            <ProductCard product={product} />
-                          </div>
-                        );
-                      })
-                    )}
-                  </div>
+                    className="btn btn-primary btnoffer"
+                    onClick={() => {
+                      setspecificcategory([]);
+                    }}
+                  >
+                    close category search
+                  </button>
+                  <input
+                    onChange={(e) => setinputvalue(e.target.value)}
+                    className="form-control col-12"
+                    type="text"
+                    placeholder="Search By Title In Categories"
+                  />
                 </div>
               </div>
+
+              {specificcategory.map((product) => {
+                if (
+                  product.title.toLowerCase().includes(inputvalue.toLowerCase())
+                ) {
+                  return (
+                    <div
+                      className="col-10 col-sm-5 col-md-3 col-lg-2"
+                      key={`products-shop-${product.id}`}
+                    >
+                      <ProductCard product={product} />
+                    </div>
+                  );
+                }
+              })}
             </div>
-          </div>
+          )}
         </div>
       )}
     </>

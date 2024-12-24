@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaStar } from "react-icons/fa6";
 import { CartOperations } from "../../Context/CartOperations";
-import { toast } from "react-toastify";
 import { FaCartPlus } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import { IoEye } from "react-icons/io5";
@@ -25,9 +24,11 @@ export default function ProductCard({ product }) {
   };
 
   async function ShowCartData() {
-    return await axios.get(`https://ecommerce.routemisr.com/api/v1/cart`, {
-      headers,
-    });
+    if (headers?.token != null) {
+      return await axios.get(`https://ecommerce.routemisr.com/api/v1/cart`, {
+        headers,
+      });
+    }
   }
 
   let { data } = useQuery("CartItem", ShowCartData);
@@ -45,10 +46,13 @@ export default function ProductCard({ product }) {
       });
     } else if (y == undefined) {
       let { data } = await addtocart(id);
-      localStorage.setItem("cartOwner", data?.data?.cartOwner);
-      localStorage.setItem("cartId", data?.cartId);
       if (data?.status == "success") {
-        toast.success(data?.message);
+        localStorage.setItem("cartOwner", data?.data?.cartOwner);
+        localStorage.setItem("cartId", data?.cartId);
+        Swal.fire({
+          text: "This Product Added Successfully To Your Cart",
+          icon: "success",
+        });
         console.log(data);
       }
     }
@@ -57,7 +61,10 @@ export default function ProductCard({ product }) {
   async function addtowishlist(id) {
     let { data } = await AddToFavorite(id);
     if (data?.status == "success") {
-      toast.success(data?.message);
+      Swal.fire({
+        text: "This Product Added Successfully To Your Favorite",
+        icon: "success",
+      });
     }
     console.log(data);
   }

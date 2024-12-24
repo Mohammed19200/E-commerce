@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import "./Register.css";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function Register() {
   let Navigate = useNavigate();
@@ -11,10 +12,17 @@ export default function Register() {
     let { data } = await axios
       .post(`https://ecommerce.routemisr.com/api/v1/auth/signup`, values)
       .catch((err) => {
-        alert(err.response.data.message);
+        Swal.fire({
+          text: `${err.response.data.message}`,
+          icon: "error",
+        });
       });
 
     if (data.message == "success") {
+      Swal.fire({
+        text: `Your account has been created successfully.`,
+        icon: "success",
+      });
       Navigate("/login");
     }
   }
