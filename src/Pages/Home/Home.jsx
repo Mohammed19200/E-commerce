@@ -10,7 +10,6 @@ import Modal from "../../Components/Modal/Modal";
 import "./Home.css";
 import LatestProducts from "../../Components/LatestProducts/LatestProducts";
 import TimerOffer from "../../Components/Timer/TimerOffer/TimerOffer";
-import Wow from "wowjs";
 import camera from "../../assets/cameraoffer-removebg-preview.png";
 import arm from "../../assets/armyoffer-removebg-preview.png";
 import UserReview from "../../Components/UserReview/UserReview";
@@ -30,10 +29,6 @@ export default function Home() {
     autoplayspeed: 2000,
     arrows: false,
   };
-
-  useEffect(() => {
-    new Wow.WOW().init();
-  }, []);
 
   return (
     <div className="col-12 bigestdivhome">

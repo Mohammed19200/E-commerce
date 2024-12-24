@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Aboutus.css";
 import img from "../../assets/aboutus.webp";
 import img1 from "../../assets/aboutus1.webp";
@@ -6,12 +6,8 @@ import img2 from "../../assets/aboutus2.webp";
 import img3 from "../../assets/aboutus3.webp";
 import img4 from "../../assets/aboutus4.webp";
 import UserReview from "../../Components/UserReview/UserReview";
-import Wow from "wowjs";
 
 export default function Aboutus() {
-  useEffect(() => {
-    new Wow.WOW().init();
-  }, []);
 
   var settings = {
     dots: false,

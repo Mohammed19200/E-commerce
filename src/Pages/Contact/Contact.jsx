@@ -1,15 +1,9 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import Wow from "wowjs";
 import { toast } from "react-toastify";
 import "./Contact.css";
-import { useEffect } from "react";
 
 export default function Contact() {
-
-  useEffect(() => {
-    new Wow.WOW().init();
-  }, []);
 
   let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 

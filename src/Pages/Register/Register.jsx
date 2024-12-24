@@ -3,15 +3,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import "./Register.css";
 import { useNavigate } from "react-router-dom";
-import Wow from "wowjs";
-import { useEffect } from "react";
 
 export default function Register() {
   let Navigate = useNavigate();
-
-  useEffect(() => {
-    new Wow.WOW().init();
-  }, []);
 
   async function registersubmit(values) {
     let { data } = await axios

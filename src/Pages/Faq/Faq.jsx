@@ -1,15 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { IoCall } from "react-icons/io5";
 import "./Faq.css";
-import Wow from "wowjs";
 
 export default function Faq() {
   let navigate = useNavigate();
-
-  useEffect(() => {
-    new Wow.WOW().init();
-  }, []);
 
   return (
     <>

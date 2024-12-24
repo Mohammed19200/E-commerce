@@ -2,15 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { BallTriangle } from "react-loader-spinner";
 import "./CartCheckout.css";
 import { CartOperations } from "./../../Context/CartOperations";
-import Wow from "wowjs";
 export default function CartCheckout() {
   const [loading, setloading] = useState(true);
   const { getcartdata } = useContext(CartOperations);
   const [cartItem, setcartItem] = useState();
-
-  useEffect(() => {
-    new Wow.WOW().init();
-  }, []);
 
   async function Items() {
     let { data } = await getcartdata();

@@ -2,7 +2,6 @@ import ProductCard from "../../Components/ProductCard/ProductCard";
 import { BallTriangle } from "react-loader-spinner";
 import { useContext, useEffect, useState } from "react";
 import { ProductOperations } from "../../Context/ProductOperations";
-import Wow from "wowjs";
 import "./Shop.css";
 
 export default function Shop() {
@@ -24,10 +23,6 @@ export default function Shop() {
 
   useEffect(() => {
     ShowData();
-  }, []);
-
-  useEffect(() => {
-    new Wow.WOW().init();
   }, []);
 
   return (

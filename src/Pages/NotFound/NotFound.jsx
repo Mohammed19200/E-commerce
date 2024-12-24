@@ -1,14 +1,9 @@
 import React, { useEffect } from "react";
 import "./NotFound.css";
 import { useNavigate } from "react-router-dom";
-import Wow from "wowjs";
 
 export default function NotFound() {
   let navigate = useNavigate();
-
-  useEffect(() => {
-    new Wow.WOW().init();
-  }, []);
 
   return (
     <div className="col-12 bigestdivnotfound wow animate__animated animate__fadeInDownBig animate__slow">

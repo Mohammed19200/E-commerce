@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FaStar } from "react-icons/fa6";
 import { CartOperations } from "../../Context/CartOperations";
 import { toast } from "react-toastify";
 import { FaCartPlus } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import { IoEye } from "react-icons/io5";
-import "./ProductCard.scss";
+import "./ProductCard.css";
 import { FavoriteOperations } from "../../Context/FavoriteOperations";
 import axios from "axios";
 import { useQuery } from "react-query";

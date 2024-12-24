@@ -8,7 +8,7 @@ import ProductCard from "../../Components/ProductCard/ProductCard";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { BallTriangle } from "react-loader-spinner";
-import Wow from "wowjs";
+
 
 export default function Categories() {
   let { getcategories } = useContext(ProductOperations);
@@ -33,10 +33,6 @@ export default function Categories() {
 
   useEffect(() => {
     Categoriess();
-  }, []);
-
-  useEffect(() => {
-    new Wow.WOW().init();
   }, []);
 
   function show(name) {

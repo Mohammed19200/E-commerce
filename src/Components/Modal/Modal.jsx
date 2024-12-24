@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { FaWindowClose } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "./Modal.css";
-import Wow from "wowjs";
 
 export default function Modal() {
   const [close, setclose] = useState(false);
@@ -15,10 +14,6 @@ export default function Modal() {
     }, 4000);
 
     return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    new Wow.WOW().init();
   }, []);
 
   function SendEmail(values) {

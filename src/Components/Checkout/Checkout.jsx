@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import Wow from "wowjs";
 import CartCheckout from "./CartCheckout";
 import "./CartCheckout.css";
 import { toast } from "react-toastify";
@@ -18,10 +17,6 @@ export default function Checkout() {
   const [cartItem, setcartItem] = useState();
 
   let navigate = useNavigate();
-
-  useEffect(() => {
-    new Wow.WOW().init();
-  }, []);
 
   async function getcartdata() {
     await axios

@@ -3,15 +3,11 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Usercontext } from "../../Context/UserToken";
-import Wow from "wowjs";
 import { toast } from "react-toastify";
 
 export default function Login() {
-  useEffect(() => {
-    new Wow.WOW().init();
-  }, []);
 
   let Navigate = useNavigate();
   let { setusertoken } = useContext(Usercontext);

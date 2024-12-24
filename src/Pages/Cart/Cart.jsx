@@ -4,7 +4,6 @@ import { CartOperations } from "../../Context/CartOperations";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import Wow from "wowjs";
 import "./Cart.css";
 
 export default function Cart() {
@@ -66,10 +65,6 @@ export default function Cart() {
 
   useEffect(() => {
     Items();
-  }, []);
-
-  useEffect(() => {
-    new Wow.WOW().init();
   }, []);
 
   return (

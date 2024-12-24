@@ -8,7 +8,6 @@ import { FaCartPlus } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import { CartOperations } from "../../Context/CartOperations";
 import { toast } from "react-toastify";
-import Wow from "wowjs";
 
 export default function Favorite() {
   const [loading, setloading] = useState(true);
@@ -57,10 +56,6 @@ export default function Favorite() {
 
   useEffect(() => {
     getdata();
-  }, []);
-
-  useEffect(() => {
-    new Wow.WOW().init();
   }, []);
 
   return (

@@ -1,14 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import "./TermsConditions.css";
-import Wow from "wowjs";
-import { useEffect } from "react";
 
 export default function TermsConditions() {
   let navigate = useNavigate();
 
-  useEffect(() => {
-    new Wow.WOW().init();
-  }, []);
 
   return (
     <div className="col-12 bigdivTermsConditions">

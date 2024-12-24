@@ -10,7 +10,6 @@ import { FaHeart } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { FavoriteOperations } from "../../Context/FavoriteOperations";
 import Swal from "sweetalert2";
-import Wow from "wowjs";
 import "./Singleproduct.css";
 
 export default function Singleproduct() {
@@ -92,10 +91,6 @@ export default function Singleproduct() {
   useEffect(() => {
     Api();
     GetCartData();
-  }, []);
-
-  useEffect(() => {
-    new Wow.WOW().init();
   }, []);
 
   return (
