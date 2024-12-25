@@ -5,8 +5,8 @@ import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { Usercontext } from "../../Context/UserToken";
-import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 export default function Login() {
   let Navigate = useNavigate();
@@ -63,6 +63,11 @@ export default function Login() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Login</title>
+      </Helmet>
+
       <div className="bigdivlogin col-12">
         <div className="col-12 col-sm-11 col-md-9 col-lg-8 col-xl-6 loginform">
           <form

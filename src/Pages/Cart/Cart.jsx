@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./Cart.css";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 export default function Cart() {
   const [loading, setloading] = useState(true);
@@ -77,6 +78,12 @@ export default function Cart() {
 
   return (
     <div className="paddingCart">
+      
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Cart</title>
+      </Helmet>
+
       <div className="thebigestdivcart">
         {loading ? (
           <BallTriangle

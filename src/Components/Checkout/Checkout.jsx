@@ -6,6 +6,7 @@ import CartCheckout from "./CartCheckout";
 import "./CartCheckout.css";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function Checkout() {
   let headers = {
@@ -97,6 +98,11 @@ export default function Checkout() {
 
   return (
     <div className="col-12 BigestDivCheckout m-auto">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Checkout</title>
+      </Helmet>
+
       <h1 className="h3 py-2 text-center col-12 animate__animated animate__shakeX animate__infinite animate__slower">
         Checkout
       </h1>

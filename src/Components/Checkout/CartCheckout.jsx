@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { BallTriangle } from "react-loader-spinner";
 import "./CartCheckout.css";
 import { CartOperations } from "./../../Context/CartOperations";
+import { Helmet } from "react-helmet";
 export default function CartCheckout() {
   const [loading, setloading] = useState(true);
   const { getcartdata } = useContext(CartOperations);
@@ -24,6 +25,11 @@ export default function CartCheckout() {
 
   return (
     <div className="col-12 wow animate__animated animate__fadeInRightBig animate__slow">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Cart Checkout</title>
+      </Helmet>
+
       {loading ? (
         <BallTriangle
           height={100}

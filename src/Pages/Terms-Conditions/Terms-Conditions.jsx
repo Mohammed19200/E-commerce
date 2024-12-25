@@ -1,13 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import "./TermsConditions.css";
+import { Helmet } from "react-helmet";
 
 export default function TermsConditions() {
   let navigate = useNavigate();
 
-
   return (
     <div className="col-12 bigdivTermsConditions">
-      <h1 className="col-11 m-auto h2 text-center animate__animated animate__flipInX animate__infinite animate__slow">Terms & Conditions</h1>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Terms Conditions</title>
+      </Helmet>
+
+      <h1 className="col-11 m-auto h2 text-center animate__animated animate__flipInX animate__infinite animate__slow">
+        Terms & Conditions
+      </h1>
 
       <div className="divterms col-11 m-auto  wow animate__animated animate__fadeInDownBig animate__slow">
         <h1 className="h4 h1Terms">Termination</h1>

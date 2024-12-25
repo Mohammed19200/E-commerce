@@ -1,12 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./NotFound.css";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function NotFound() {
   let navigate = useNavigate();
 
   return (
     <div className="col-12 bigestdivnotfound wow animate__animated animate__fadeInDownBig animate__slow">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Not Found</title>
+      </Helmet>
+
       <div className="bigdivnotfound"></div>
 
       <div className="col-12 divbuttonnotfound">

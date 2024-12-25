@@ -3,6 +3,7 @@ import { BallTriangle } from "react-loader-spinner";
 import { useContext, useEffect, useState } from "react";
 import { ProductOperations } from "../../Context/ProductOperations";
 import "./Shop.css";
+import { Helmet } from "react-helmet";
 
 export default function Shop() {
   const [products, setproducts] = useState([]);
@@ -26,6 +27,11 @@ export default function Shop() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Shop</title>
+      </Helmet>
+
       <div className="col-12 cardshopp">
         {loading ? (
           <BallTriangle

@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import "./Register.css";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 export default function Register() {
   let Navigate = useNavigate();
@@ -74,6 +75,11 @@ export default function Register() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Register</title>
+      </Helmet>
+
       <div className="bigdivregister col-12">
         <div className="col-12 col-sm-11 col-md-9 col-lg-8 col-xl-6 registerform">
           <form

@@ -9,6 +9,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { BallTriangle } from "react-loader-spinner";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 export default function Categories() {
   let { getcategories } = useContext(ProductOperations);
@@ -104,6 +105,11 @@ export default function Categories() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Categories</title>
+      </Helmet>
+
       {loading ? (
         <BallTriangle
           height={100}

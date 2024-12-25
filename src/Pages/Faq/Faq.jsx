@@ -2,12 +2,19 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { IoCall } from "react-icons/io5";
 import "./Faq.css";
+import { Helmet } from "react-helmet";
 
 export default function Faq() {
   let navigate = useNavigate();
 
   return (
     <>
+    
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>FAQ</title>
+      </Helmet>
+
       <div className="thebigestdivFaq wow animate__animated animate__fadeInLeftBig animate__slow">
         <h1 className="col-11 m-auto text-center h4 mb-4 animate__animated animate__flipInX animate__infinite animate__slow">
           {" "}

@@ -8,6 +8,7 @@ import { FaCartPlus } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import Swal from "sweetalert2";
 import "./Singleproduct.css";
+import { Helmet } from "react-helmet";
 
 export default function Singleproduct() {
   const [showProduct, setshowProduct] = useState({});
@@ -89,6 +90,11 @@ export default function Singleproduct() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Single Product</title>
+      </Helmet>
+
       <div className="bigdiv">
         {loading ? (
           <BallTriangle

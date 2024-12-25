@@ -18,9 +18,9 @@ import Checkout from "./Components/Checkout/Checkout";
 import Orders from "./Pages/UserOrders/UserOrders";
 import "./App.css";
 import { ToastContainer } from "react-toastify";
+import { Offline } from "react-detect-offline";
 
 function App() {
-
   let routers = createBrowserRouter([
     {
       path: "",
@@ -82,10 +82,15 @@ function App() {
 
   return (
     <>
- <RouterProvider router={routers}></RouterProvider>
- <ToastContainer/>
+      <Offline>
+        <div className="Offline-Div col-12">
+          Your internet is disconnected or weak
+        </div>
+      </Offline>
+      <RouterProvider router={routers}></RouterProvider>
+      <ToastContainer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -15,6 +15,7 @@ import arm from "../../assets/armyoffer-removebg-preview.png";
 import UserReview from "../../Components/UserReview/UserReview";
 import ExplainProduct from "../../Components/ExplainProduct/ExplainProduct";
 import ExplainProduct2 from "../../Components/ExplainProduct/ExplainProduct2";
+import { Helmet } from "react-helmet";
 
 export default function Home() {
   let navigate = useNavigate();
@@ -32,6 +33,11 @@ export default function Home() {
 
   return (
     <div className="col-12 bigestdivhome">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home</title>
+      </Helmet>
+
       <Modal />
 
       <Slider

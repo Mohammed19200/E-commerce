@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./UserOrders.css";
 import axios from "axios";
 import { BallTriangle } from "react-loader-spinner";
+import { Helmet } from "react-helmet";
 
 export default function Orders() {
   const [userOrder, setuserOrder] = useState([]);
@@ -37,6 +38,11 @@ export default function Orders() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Orders</title>
+      </Helmet>
+
       <h1 className="h3 col-11 col-12 text-center py-2">Your Orders</h1>
 
       {loading ? (

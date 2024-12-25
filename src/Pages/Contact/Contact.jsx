@@ -2,9 +2,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
 import "./Contact.css";
+import { Helmet } from "react-helmet";
 
 export default function Contact() {
-
   let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   let validateScheme = Yup.object({
@@ -46,6 +46,11 @@ export default function Contact() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Contact</title>
+      </Helmet>
+
       <div>
         <div className="bigdivInfoContact wow animate__animated animate__fadeInDownBig animate__slow">
           <h1 className="col-10 m-auto col-lg-12 H1Infobig animate__animated animate__flipInX animate__infinite animate__slow">
@@ -97,7 +102,9 @@ export default function Contact() {
             className="col-12 formstyleContact"
             onSubmit={formik.handleSubmit}
           >
-            <h1 className="col-12 H1Infobig animate__animated animate__fadeOut animate__infinite animate__slow">Ask us anything here</h1>
+            <h1 className="col-12 H1Infobig animate__animated animate__fadeOut animate__infinite animate__slow">
+              Ask us anything here
+            </h1>
 
             <div className="col-10 col-md-10 col-lg-7 m-auto">
               <label className="mb-1" htmlFor="name">

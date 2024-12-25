@@ -8,6 +8,7 @@ import { FaCartPlus } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import { CartOperations } from "../../Context/CartOperations";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 export default function Favorite() {
   let headers = {
@@ -67,6 +68,11 @@ export default function Favorite() {
 
   return (
     <div className="paddingCart">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Favorite</title>
+      </Helmet>
+
       <div className="thebigestdivcart">
         {loading ? (
           <BallTriangle
