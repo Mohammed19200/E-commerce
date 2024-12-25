@@ -1,76 +1,66 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaStar } from "react-icons/fa6";
-import { CartOperations } from "../../Context/CartOperations";
 import { FaCartPlus } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import { IoEye } from "react-icons/io5";
 import "./ProductCard.css";
-import { FavoriteOperations } from "../../Context/FavoriteOperations";
 import axios from "axios";
-import { useQuery } from "react-query";
 import Swal from "sweetalert2";
-import { Usercontext } from "../../Context/UserToken";
 
 export default function ProductCard({ product }) {
-  let { AddToFavorite } = useContext(FavoriteOperations);
-  let { addtocart } = useContext(CartOperations);
-  let { usertoken } = useContext(Usercontext);
-
   let navigate = useNavigate();
 
   let headers = {
     token: localStorage.getItem("userToken"),
   };
 
-  async function ShowCartData() {
-    if (headers?.token != null) {
-      return await axios.get(`https://ecommerce.routemisr.com/api/v1/cart`, {
-        headers,
-      });
-    }
-  }
-
-  let { data } = useQuery("CartItem", ShowCartData);
-
-  async function AddCartItem(id) {
-    let y = await data?.data?.data?.products?.find((product) => {
-      return product?.product?.id == id;
-    });
-
-    if (y != undefined) {
-      await data?.data?.data?.products?.map((product) => {
-        if (product?.product?.id == id) {
-          Swal.fire("This Product Already In Your Cart!");
+  async function AddCartItem(productId) {
+    return await axios
+      .post(
+        `https://ecommerce.routemisr.com/api/v1/cart`,
+        {
+          productId,
+        },
+        {
+          headers,
         }
-      });
-    } else if (y == undefined) {
-      let { data } = await addtocart(id);
-      if (data?.status == "success") {
-        localStorage.setItem("cartOwner", data?.data?.cartOwner);
-        localStorage.setItem("cartId", data?.cartId);
-        Swal.fire({
-          text: "This Product Added Successfully To Your Cart",
-          icon: "success",
-        });
-        console.log(data);
-      }
-    }
+      )
+      .then((response) => {
+        if (response?.data?.status == "success") {
+          Swal.fire({
+            text: `${response?.data?.message}`,
+            icon: "success",
+          });
+        }
+      })
+      .catch((err) => err);
   }
 
-  async function addtowishlist(id) {
-    let { data } = await AddToFavorite(id);
-    if (data?.status == "success") {
-      Swal.fire({
-        text: "This Product Added Successfully To Your Favorite",
-        icon: "success",
-      });
-    }
-    console.log(data);
+  async function addtowishlist(productId) {
+    return axios
+      .post(
+        `https://ecommerce.routemisr.com/api/v1/wishlist`,
+        {
+          productId,
+        },
+        {
+          headers,
+        }
+      )
+      .then((response) => {
+        if (response?.data?.status == "success") {
+          Swal.fire({
+            text: `${response?.data?.message}`,
+            icon: "success",
+          });
+        }
+      })
+      .catch((err) => err);
   }
 
   function FindUserToAddToCart(id) {
-    if (localStorage.getItem("userToken").length != 0) {
+    if (localStorage.getItem("userToken") != null) {
       AddCartItem(id);
     } else {
       navigate("/login");
@@ -78,7 +68,7 @@ export default function ProductCard({ product }) {
   }
 
   function FindUserToAddToFavorite(id) {
-    if (localStorage.getItem("userToken").length != 0) {
+    if (localStorage.getItem("userToken") != null) {
       addtowishlist(id);
     } else {
       navigate("/login");
