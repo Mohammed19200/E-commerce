@@ -7,10 +7,15 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import { CartOperations } from "../../Context/CartOperations";
+import axios from "axios";
 
 export default function Favorite() {
+  let headers = {
+    token: localStorage.getItem("userToken"),
+  };
+
   const [loading, setloading] = useState(true);
-  let { GetData, DeleteProductItem } = useContext(FavoriteOperations);
+  let { DeleteProductItem } = useContext(FavoriteOperations);
   const [favoriteItem, setfavoriteItem] = useState();
   let { addtocart } = useContext(CartOperations);
 
@@ -26,11 +31,15 @@ export default function Favorite() {
   }
 
   async function getdata() {
-    let { data } = await GetData();
-    if (data) {
-      setfavoriteItem(data);
-      setloading(false);
-    }
+    return await axios
+      .get(`https://ecommerce.routemisr.com/api/v1/wishlist`, {
+        headers,
+      })
+      .then((response) => {
+        setfavoriteItem(response?.data);
+        setloading(false);
+      })
+      .catch((err) => err);
   }
 
   async function DeletePrroduct(id) {
@@ -82,68 +91,72 @@ export default function Favorite() {
               <h1 className="titlecart col-12 h5">Favorite List</h1>
             )}
 
-            <div className="col-12 col-md-10 col-lg-8 bigestdivcart">
-              {favoriteItem?.data.map((product) => {
-                return (
-                  <div key={product.id} className="col-12 bigdivcart">
-                    <div className=" col-6 col-md-6 firstdiv">
-                      <div className="col-6 col-sm-3 col-md-3 col-xl-2">
-                        <Link to={`/singleproduct/${product.id}`}>
-                          <img
-                            className="w-100 imagecart"
-                            src={product.imageCover}
-                            alt={product.title}
-                          />
-                        </Link>
-                      </div>
-                      <div className="col-8 col-md-6 firstdiv1 ">
-                        <Link
-                          to={`/singleproduct/${product.id}`}
-                          className="linksinglepage"
-                        >
-                          <h1 className="TitleCart col-12">
-                            {product?.title
-                              ?.split(" ")
-                              ?.splice(0, 2)
-                              ?.join(" ")}
+            {favoriteItem ? (
+              <div className="col-12 col-md-10 col-lg-8 bigestdivcart">
+                {favoriteItem?.data.map((product) => {
+                  return (
+                    <div key={product?.id} className="col-12 bigdivcart">
+                      <div className=" col-6 col-md-6 firstdiv">
+                        <div className="col-6 col-sm-3 col-md-3 col-xl-2">
+                          <Link to={`/singleproduct/${product?.id}`}>
+                            <img
+                              className="w-100 imagecart"
+                              src={product?.imageCover}
+                              alt={product?.title}
+                            />
+                          </Link>
+                        </div>
+                        <div className="col-8 col-md-6 firstdiv1 ">
+                          <Link
+                            to={`/singleproduct/${product?.id}`}
+                            className="linksinglepage"
+                          >
+                            <h1 className="TitleCart col-12">
+                              {product?.title
+                                ?.split(" ")
+                                ?.splice(0, 2)
+                                ?.join(" ")}
+                            </h1>
+                          </Link>
+                          <h1 className="price col-12">
+                            price : {product?.price}
                           </h1>
-                        </Link>
-                        <h1 className="price col-12">
-                          price : {product.price}
-                        </h1>
-                        <h1
+                          <h1
+                            onClick={() => {
+                              DeletePrroduct(product?.id);
+                            }}
+                            className="remove col-12"
+                          >
+                            <FaRegTrashAlt className="icontrash" /> remove
+                          </h1>
+                        </div>
+                      </div>
+
+                      <div className="col-5 seconddiv">
+                        <Link
                           onClick={() => {
-                            DeletePrroduct(product.id);
+                            AddCartItem(product?.id);
                           }}
-                          className="remove col-12"
+                          className="buttonfavorite btn"
                         >
-                          <FaRegTrashAlt className="icontrash" /> remove
-                        </h1>
+                          <FaCartPlus />
+                        </Link>
                       </div>
                     </div>
+                  );
+                })}
 
-                    <div className="col-5 seconddiv">
-                      <Link
-                        onClick={() => {
-                          AddCartItem(product.id);
-                        }}
-                        className="buttonfavorite btn"
-                      >
-                        <FaCartPlus />
-                      </Link>
-                    </div>
-                  </div>
-                );
-              })}
-
-              {favoriteItem?.count != 0 ? (
-                <h1 className="favoriteitem col-12 h5">
-                  Num Of Favorite Items : {favoriteItem?.count}
-                </h1>
-              ) : (
-                ""
-              )}
-            </div>
+                {favoriteItem?.count != 0 ? (
+                  <h1 className="favoriteitem col-12 h5">
+                    Num Of Favorite Items : {favoriteItem?.count}
+                  </h1>
+                ) : (
+                  ""
+                )}
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         )}
       </div>

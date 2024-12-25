@@ -70,7 +70,7 @@ export default function ProductCard({ product }) {
   }
 
   function FindUserToAddToCart(id) {
-    if (usertoken && localStorage.getItem("userToken")) {
+    if (localStorage.getItem("userToken").length != 0) {
       AddCartItem(id);
     } else {
       navigate("/login");
@@ -78,7 +78,7 @@ export default function ProductCard({ product }) {
   }
 
   function FindUserToAddToFavorite(id) {
-    if (usertoken && localStorage.getItem("userToken")) {
+    if (localStorage.getItem("userToken").length != 0) {
       addtowishlist(id);
     } else {
       navigate("/login");

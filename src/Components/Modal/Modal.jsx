@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { FaWindowClose } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "./Modal.css";
+import Swal from "sweetalert2";
 
 export default function Modal() {
   const [close, setclose] = useState(false);
@@ -18,7 +19,10 @@ export default function Modal() {
 
   function SendEmail(values) {
     localStorage.setItem("EmailOffer", JSON.stringify(values));
-    toast.success("Your Email Send Successfully");
+    Swal.fire({
+      text: "Your Email Send Successfully",
+      icon: "success",
+    });
     setclose(false);
   }
 

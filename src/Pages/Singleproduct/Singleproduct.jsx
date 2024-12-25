@@ -1,51 +1,65 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import { BallTriangle } from "react-loader-spinner";
 import { FaStar } from "react-icons/fa6";
 import Slider from "react-slick";
-import { CartOperations } from "../../Context/CartOperations";
 import { FaCartPlus } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
-import { FavoriteOperations } from "../../Context/FavoriteOperations";
 import Swal from "sweetalert2";
 import "./Singleproduct.css";
 
 export default function Singleproduct() {
   const [showProduct, setshowProduct] = useState({});
   const [loading, setloading] = useState(true);
-  let { AddToFavorite } = useContext(FavoriteOperations);
-  const { addtocart, getcartdata } = useContext(CartOperations);
   let { id } = useParams();
   console.log(id);
+  let headers = {
+    token: localStorage.getItem("userToken"),
+  };
 
-  async function AddCartItem(id) {
-    let { data } = await addtocart(id);
-    if (data?.status == "success") {
-      Swal.fire({
-        text: "This Product Added Successfully To Your Cart",
-        icon: "success",
-      });
-    }
-    console.log(data);
+  async function AddCartItem(productId) {
+    return await axios
+      .post(
+        `https://ecommerce.routemisr.com/api/v1/cart`,
+        {
+          productId,
+        },
+        {
+          headers,
+        }
+      )
+      .then((response) => {
+        if (response?.data?.status == "success") {
+          Swal.fire({
+            text: `${response?.data?.message}`,
+            icon: "success",
+          });
+        }
+      })
+      .catch((err) => err);
   }
 
-  async function GetCartData() {
-    let { data } = await getcartdata();
-    if (data) {
-      setloading(false);
-    }
-  }
-
-  async function addtowishlist(id) {
-    let { data } = await AddToFavorite(id);
-    if (data?.status == "success") {
-      Swal.fire({
-        text: "This Product Added Successfully To Your Favorite",
-        icon: "success",
-      });
-    }
-    console.log(data);
+  async function addtowishlist(productId) {
+    return axios
+      .post(
+        `https://ecommerce.routemisr.com/api/v1/wishlist`,
+        {
+          productId,
+        },
+        {
+          headers,
+        }
+      )
+      .then((response) => {
+        if (response?.data?.status == "success") {
+          Swal.fire({
+            text: `${response?.data?.message}`,
+            icon: "success",
+          });
+        }
+      })
+      .catch((err) => err);
   }
 
   var settings = {
@@ -71,8 +85,7 @@ export default function Singleproduct() {
 
   useEffect(() => {
     Api();
-    GetCartData();
-  }, []);
+  }, [id]);
 
   return (
     <>
