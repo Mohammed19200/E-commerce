@@ -1,379 +1,382 @@
 .bigestdivcart {
-    background-color: #f8f9fa;
-    margin: auto !important;
-    border: orange solid 1px;
+  background-color: #f8f9fa;
+  margin: auto !important;
+  border: orange solid 1px;
 }
 
 .thebigestdivcart {
-    background-color: #f8f9fa;
-    padding: 2rem 0rem;
+  background-color: #f8f9fa;
+  padding: 2rem 0rem;
 }
 
 .bigdivcart {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-around;
-    padding: 1rem 0rem;
-    border-bottom: 1px solid orange;
-    margin: auto !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  padding: 1rem 0rem;
+  border-bottom: 1px solid orange;
+  margin: auto !important;
 }
 
 .firstdiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.seconddiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.firstdiv1 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.cartitem {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.cartitem1 {
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 1rem 0rem;
+  background-color: orange;
+  border-radius: 1rem;
+  color: white;
+}
+
+.divemptycart {
+  padding: 1rem 0rem;
+}
+
+.total {
+  text-align: center;
+  color: orange;
+  font-size: 1.2rem;
+}
+
+.titlecart {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.remove {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.remove:hover {
+  color: red !important;
+  cursor: pointer;
+}
+.remove:hover .icontrash {
+  color: red !important;
+  cursor: pointer;
+}
+
+.icontrash {
+  color: orange;
+  font-size: 1.2rem;
+}
+
+.price {
+  color: black !important;
+  font-size: 1rem;
+  font-weight: 400 !important;
+}
+
+.TitleCart {
+  font-weight: bold;
+  font-weight: 500 !important;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.checkoutdiv {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0rem;
+}
+
+.buttoncount {
+  background: none;
+  border: 1px solid orange !important;
+  color: black;
+}
+
+.buttoncount:hover {
+  background-color: orange;
+  border: 0 !important;
+  outline: 0 !important;
+}
+
+.buttoncheckout {
+  background-color: orange;
+  border: 0 !important;
+  outline: 0 !important;
+  color: black;
+  padding: 0.7rem 2rem;
+}
+
+.buttoncheckout:hover {
+  background: none;
+  border: 1px solid orange !important;
+}
+
+.linksinglepage {
+  text-decoration: none !important;
+}
+
+.imagecart:hover {
+  border: 1px solid orange;
+  border-radius: 1rem;
+}
+
+.TitleCart:hover {
+  color: orange !important;
+}
+
+.count {
+  font-size: 1.1rem;
+}
+
+.paddingCart {
+  padding: 2rem 0rem;
+}
+
+/* media screen */
+@media screen and (min-width: 768px) {
+  .seconddiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+
+  .firstdiv {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
     gap: 1rem;
+    justify-content: flex-start;
+  }
 }
 
-.seconddiv {
+@media screen and (max-width: 767.5px) {
+  .seconddiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .firstdiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+
+  .bigdivcart {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1rem;
+    border-bottom: 1px solid orange;
+    gap: 1rem;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 492.5px) {
+  .seconddiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-content: flex-end;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .firstdiv {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    gap: 0.5rem;
-}
+    gap: 1rem;
+    justify-content: flex-start;
+  }
 
-.firstdiv1 {
+  .bigdivcart {
+    margin: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-}
+    padding: 1rem;
+    border-bottom: 1px solid orange;
+    gap: 1rem;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.cartitem {
-    text-align: center;
-    font-size: 1.2rem;
-}
-
-.cartitem1 {
-    text-align: center;
-    font-size: 1.1rem;
-    padding: 1rem 0rem;
-    background-color: orange;
-    border-radius: 1rem;
-    color: white;
-}
-
-.divemptycart{
-    padding: 1rem 0rem;
-}
-
-.total {
-    text-align: center;
-    color: orange;
-    font-size: 1.2rem;
-}
-
-.titlecart {
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-.remove {
+  .remove {
+    font-size: 1rem;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     gap: 0.2rem;
+  }
+
+  .price {
     font-size: 1rem;
-    font-weight: 400;
+  }
 }
 
-.remove:hover {
-    color: red !important;
-    cursor: pointer;
-}
-
-.icontrash {
-    color: orange;
-}
-
-.price {
-    color: black !important;
-    font-size: 1rem;
-    font-weight: 400 !important;
-}
-
-.TitleCart {
-    font-weight: bold;
-    font-weight: 500 !important;
-    font-size: 1.2rem;
-    color: black;
-}
-
-.checkoutdiv {
+@media screen and (max-width: 392.5px) {
+  .remove {
+    font-size: 0.8rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .price {
+    font-size: 0.8rem;
+  }
+
+  .TitleCart {
+    font-size: 0.9rem !important;
+    font-weight: bold;
+  }
+
+  .bigdivcart {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    padding: 1rem;
+    border-bottom: 1px solid orange;
     align-content: center;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 0rem;
-}
-
-.buttoncount {
-    background: none;
-    border: 1px solid orange !important;
-    color: black;
-}
-
-.buttoncount:hover {
-    background-color: orange;
-    border: 0 !important;
-    outline: 0 !important;
-}
-
-.buttoncheckout {
-    background-color: orange;
-    border: 0 !important;
-    outline: 0 !important;
-    color: black;
-    padding: 0.7rem 2rem;
-}
-
-.buttoncheckout:hover {
-    background: none;
-    border: 1px solid orange !important;
-}
-
-.linksinglepage {
-    text-decoration: none !important;
-}
-
-.imagecart:hover {
-    border: 1px solid orange;
-    border-radius: 1rem;
-}
-
-.TitleCart:hover {
-    color: orange !important;
-}
-
-.count {
-    font-size: 1.1rem;
-}
-
-.paddingCart{
-    padding: 2rem 0rem;
-}
-
-/* media screen */
-@media screen and (min-width: 768px) {
-    .seconddiv {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 0.5rem;
-        justify-content: flex-end;
-    }
-
-    .firstdiv {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: center;
-        align-items: center;
-        gap: 1rem;
-        justify-content: flex-start;
-    }
-}
-
-@media screen and (max-width: 767.5px) {
-    .seconddiv {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        align-content: center;
-        justify-content: flex-end;
-        align-items: center;
-    }
-
-    .firstdiv {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: center;
-        align-items: center;
-        gap: 1rem;
-        justify-content: flex-start;
-    }
-
-    .bigdivcart {
-        margin: auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 1rem;
-        border-bottom: 1px solid orange;
-        gap: 1rem;
-        align-content: center;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
-
-@media screen and (max-width: 492.5px) {
-    .seconddiv {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        align-content: flex-end;
-        justify-content: flex-end;
-        align-items: center;
-    }
-
-    .firstdiv {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 1rem;
-        justify-content: flex-start;
-    }
-
-    .bigdivcart {
-        margin: auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 1rem;
-        border-bottom: 1px solid orange;
-        gap: 1rem;
-        align-content: center;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .remove {
-        font-size: 1rem;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 0.2rem;
-    }
-
-    .price {
-        font-size: 1rem;
-    }
-}
-
-@media screen and (max-width: 392.5px) {
-    .remove {
-        font-size: 0.8rem;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 0.2rem;
-    }
-
-    .price {
-        font-size: 0.8rem;
-    }
-
-    .TitleCart {
-        font-size: 0.9rem !important;
-        font-weight: bold;
-    }
-
-    .bigdivcart {
-        margin: auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 1rem;
-        border-bottom: 1px solid orange;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-    }
-
+  }
 }
 
 @media screen and (min-width: 492.5px) and (max-width: 575.5px) {
-    .seconddiv {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        align-content: flex-end;
-        justify-content: flex-end;
-        align-items: center;
-    }
+  .seconddiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-content: flex-end;
+    justify-content: flex-end;
+    align-items: center;
+  }
 
-    .firstdiv {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 1rem;
-        justify-content: flex-start;
-    }
+  .firstdiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
 
-    .bigdivcart {
-        margin: auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 1rem;
-        border-bottom: 1px solid orange;
-        gap: 1rem;
-        align-content: center;
-        justify-content: space-between;
-        align-items: center;
-    }
+  .bigdivcart {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1rem;
+    border-bottom: 1px solid orange;
+    gap: 1rem;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .remove {
-        font-size: 1rem;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 0.2rem;
-    }
+  .remove {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.2rem;
+  }
 
-    .price {
-        font-size: 1rem;
-    }
+  .price {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width: 392.5px) {
-    .remove {
-        font-size: 0.8rem;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 0.2rem;
-    }
+  .remove {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.2rem;
+  }
 
-    .price {
-        font-size: 0.8rem;
-    }
+  .price {
+    font-size: 0.8rem;
+  }
 
-    .TitleCart {
-        font-size: 0.9rem !important;
-        font-weight: bold;
-    }
+  .TitleCart {
+    font-size: 0.9rem !important;
+    font-weight: bold;
+  }
 
-    .bigdivcart {
-        margin: auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 1rem;
-        border-bottom: 1px solid orange;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-    }
-
+  .bigdivcart {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1rem;
+    border-bottom: 1px solid orange;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
 }

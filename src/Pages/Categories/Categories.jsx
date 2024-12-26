@@ -77,6 +77,14 @@ export default function Categories() {
         },
       },
       {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
         breakpoint: 3000,
         settings: {
           slidesToShow: 6,
@@ -126,10 +134,15 @@ export default function Categories() {
           <Slider className="col-11 m-auto slidercategories" {...settings}>
             {category.map((categorey) => {
               return (
-                <Card key={categorey._id} className="CardStyleCategories">
+                <Card
+                  style={{ height: "300px" }}
+                  key={categorey._id}
+                  className="CardStyleCategories"
+                >
                   <Card.Img
                     className=""
-                    height={250}
+                    height={200}
+                    style={{ objectFit: "contain" }}
                     variant="top"
                     src={categorey.image}
                     alt={categorey.name}

@@ -1,12 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
-import { FavoriteOperations } from "../../Context/FavoriteOperations";
+import React, { useEffect, useState } from "react";
 import { BallTriangle } from "react-loader-spinner";
 import "./Favorite.css";
 import { Link } from "react-router-dom";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa6";
 import Swal from "sweetalert2";
-import { CartOperations } from "../../Context/CartOperations";
 import axios from "axios";
 import { Helmet } from "react-helmet";
 
@@ -16,19 +14,28 @@ export default function Favorite() {
   };
 
   const [loading, setloading] = useState(true);
-  let { DeleteProductItem } = useContext(FavoriteOperations);
   const [favoriteItem, setfavoriteItem] = useState();
-  let { addtocart } = useContext(CartOperations);
 
-  async function AddCartItem(id) {
-    let { data } = await addtocart(id);
-    if (data?.status == "success") {
-      Swal.fire({
-        text: "This Product Added Successfully To Your Cart",
-        icon: "success",
-      });
-    }
-    console.log(data);
+  async function AddCartItem(productId) {
+    return await axios
+      .post(
+        `https://ecommerce.routemisr.com/api/v1/cart`,
+        {
+          productId,
+        },
+        {
+          headers,
+        }
+      )
+      .then((response) => {
+        if (response?.data?.status == "success") {
+          Swal.fire({
+            text: "This Product Added Successfully To Your Cart",
+            icon: "success",
+          });
+        }
+      })
+      .catch((err) => err);
   }
 
   async function getdata() {
@@ -43,23 +50,35 @@ export default function Favorite() {
       .catch((err) => err);
   }
 
-  async function DeletePrroduct(id) {
-    let { data } = await DeleteProductItem(id);
-    console.log(data);
-
-    Swal.fire({
-      title: "Do you want to delete this product ?",
-      showCancelButton: true,
-      confirmButtonText: "Delete",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        if (data?.status == "success") {
-          Swal.fire("this product is deleted successfully", "", "success");
-          setfavoriteItem(data);
-          setloading(false);
-        }
-      }
-    });
+  async function DeletePrroduct(productId) {
+    return await axios
+      .delete(`https://ecommerce.routemisr.com/api/v1/wishlist/${productId}`, {
+        headers,
+      })
+      .then((response) => {
+        Swal.fire({
+          title: "Do you want to delete this product ?",
+          showCancelButton: true,
+          confirmButtonText: "Delete",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            if (response?.data?.status == "success") {
+              Swal.fire(`${response?.data?.message}`);
+              let filterDeleteProduct = favoriteItem?.data.filter((product) => {
+                return product?.id != productId;
+              });
+              let newProducts = {
+                status: favoriteItem.status,
+                count: favoriteItem.count,
+                data: filterDeleteProduct,
+              };
+              setfavoriteItem(newProducts);
+              setloading(false);
+            }
+          }
+        });
+      })
+      .catch((err) => err);
   }
 
   useEffect(() => {
@@ -133,7 +152,13 @@ export default function Favorite() {
                             }}
                             className="remove col-12"
                           >
-                            <FaRegTrashAlt className="icontrash" /> remove
+                            <FaRegTrashAlt
+                              onClick={() => {
+                                DeletePrroduct(product?.id);
+                              }}
+                              className="icontrash"
+                            />{" "}
+                            remove
                           </h1>
                         </div>
                       </div>
@@ -145,7 +170,11 @@ export default function Favorite() {
                           }}
                           className="buttonfavorite btn"
                         >
-                          <FaCartPlus />
+                          <FaCartPlus
+                            onClick={() => {
+                              AddCartItem(product?.id);
+                            }}
+                          />
                         </Link>
                       </div>
                     </div>

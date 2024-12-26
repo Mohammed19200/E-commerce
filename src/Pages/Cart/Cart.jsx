@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BallTriangle } from "react-loader-spinner";
-import { CartOperations } from "../../Context/CartOperations";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -10,8 +9,6 @@ import { Helmet } from "react-helmet";
 
 export default function Cart() {
   const [loading, setloading] = useState(true);
-
-  const { deleteproductitem, updatequantity } = useContext(CartOperations);
 
   const [cartItem, setcartItem] = useState();
 
@@ -37,38 +34,60 @@ export default function Cart() {
       });
   }
 
-  async function DeleteProduct(id) {
-    let { data } = await deleteproductitem(id);
-    Swal.fire({
-      title: "Do you want to delete this product ?",
-      showCancelButton: true,
-      confirmButtonText: "Delete",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        if (data?.status == "success") {
-          Swal.fire("this product is deleted successfully", "", "success");
-          setcartItem(data);
-          setloading(false);
+  async function DeleteProduct(productId) {
+    return await axios
+      .delete(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`, {
+        headers,
+      })
+      .then((response) => {
+        if (response?.data) {
+          Swal.fire({
+            title: "Do you want to delete this product ?",
+            showCancelButton: true,
+            confirmButtonText: "Delete",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              if (response?.data?.status == "success") {
+                Swal.fire("this product is deleted successfully");
+                setcartItem(response?.data);
+                setloading(false);
+              }
+            }
+          });
         }
-      }
-    });
+      })
+      .catch((err) => err);
   }
 
-  async function UpdateQuantity(id, count) {
+  async function UpdateQuantity(productId, count) {
     if (count < 1) {
-      await DeleteProduct(id);
-      setloading(false);
-    } else {
-      let { data } = await updatequantity(id, count);
-      if (data) {
-        setcartItem(data);
+      if (productId) {
+        await DeleteProduct(productId);
         setloading(false);
-        Swal.fire({
-          title: "Good job!",
-          text: `This Product Count Be ${count}`,
-          icon: "success",
-        });
       }
+    } else {
+      return await axios
+        .put(
+          `https://ecommerce.routemisr.com/api/v1/cart/${productId}`,
+          {
+            count: count,
+          },
+          {
+            headers,
+          }
+        )
+        .then((response) => {
+          if (response?.data) {
+            setcartItem(response?.data);
+            setloading(false);
+            Swal.fire({
+              title: "Good job!",
+              text: `This Product Count Be ${count}`,
+              icon: "success",
+            });
+          }
+        })
+        .catch((err) => err);
     }
   }
 
@@ -78,7 +97,6 @@ export default function Cart() {
 
   return (
     <div className="paddingCart">
-      
       <Helmet>
         <meta charSet="utf-8" />
         <title>Cart</title>
@@ -148,7 +166,13 @@ export default function Cart() {
                               }}
                               className="remove col-12"
                             >
-                              <FaRegTrashAlt className="icontrash" /> remove
+                              <FaRegTrashAlt
+                                onClick={() => {
+                                  DeleteProduct(product?.product.id);
+                                }}
+                                className="icontrash"
+                              />{" "}
+                              remove
                             </h1>
                           </div>
                         </div>
@@ -165,7 +189,7 @@ export default function Cart() {
                           >
                             +
                           </button>
-                          <h1 className="count">{product.count}</h1>
+                          <h1 className="count">{product?.count}</h1>
                           <button
                             onClick={() => {
                               UpdateQuantity(

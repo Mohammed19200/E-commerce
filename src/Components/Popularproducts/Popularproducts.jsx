@@ -24,7 +24,7 @@ export default function Popularproducts() {
     slidesToScroll: 4,
     autoplay: true,
     autoplayspeed: 600,
-    arrows: true,
+    arrows: false,
     initialSlide: 0,
     responsive: [
       {
