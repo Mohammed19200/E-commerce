@@ -10,7 +10,8 @@
   padding: 0.5rem;
 }
 
-.CardStyleCategories:hover {
+.CardStyleCategories:hover,
+.CardStyleCategories:focus {
   border: 1px solid orange !important;
   border-radius: 0.5rem;
 }
@@ -100,4 +101,28 @@ button:not(:disabled),
 
 .modal-content {
   top: 150px;
+}
+
+.slick-prev:before {
+  color: orange;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 2px;
+  z-index: 9999999;
+}
+
+.slick-next:before {
+  color: orange;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 2px;
+  z-index: 9999999;
+}
+
+.slick-dots {
+  bottom: -10px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: orange;
 }

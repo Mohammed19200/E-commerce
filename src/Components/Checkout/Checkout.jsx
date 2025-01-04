@@ -103,7 +103,7 @@ export default function Checkout() {
         <title>Checkout</title>
       </Helmet>
 
-      <h1 className="h3 py-2 text-center col-12 animate__animated animate__shakeX animate__infinite animate__slower">
+      <h1 className="h3 py-2 text-center col-12">
         Checkout
       </h1>
 

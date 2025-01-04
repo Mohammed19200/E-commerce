@@ -1,22 +1,27 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BallTriangle } from "react-loader-spinner";
 import "./CartCheckout.css";
-import { CartOperations } from "./../../Context/CartOperations";
 import { Helmet } from "react-helmet";
+import axios from "axios";
 export default function CartCheckout() {
   const [loading, setloading] = useState(true);
-  const { getcartdata } = useContext(CartOperations);
   const [cartItem, setcartItem] = useState();
+  let headers = {
+    token: localStorage.getItem("userToken"),
+  };
 
   async function Items() {
-    let { data } = await getcartdata();
-
-    if (data) {
-      setcartItem(data);
-      setloading(false);
-    } else {
-      setloading(true);
-    }
+    return await axios
+      .get(`https://ecommerce.routemisr.com/api/v1/cart`, {
+        headers,
+      })
+      .then((response) => {
+        setcartItem(response?.data);
+        setloading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   useEffect(() => {
@@ -59,7 +64,6 @@ export default function CartCheckout() {
                   <tr className="" key={product.product.id}>
                     <td>
                       <img
-                        className="col-12 col-sm-8 col-md-6 col-lg-10 col-xl-10 col-xxl-6"
                         height={70}
                         src={product.product.imageCover}
                         alt={product.product.title}

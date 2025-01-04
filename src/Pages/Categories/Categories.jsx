@@ -50,14 +50,14 @@ export default function Categories() {
   }
 
   var settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 300,
     slidesToShow: 4,
     slidesToScroll: 4,
     autoplay: true,
     autoplayspeed: 600,
-    arrows: false,
+    arrows: true,
     initialSlide: 0,
     responsive: [
       {

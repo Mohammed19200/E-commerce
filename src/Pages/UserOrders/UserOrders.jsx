@@ -125,7 +125,7 @@ export default function Orders() {
                             <tr key={product._id}>
                               <td>
                                 <img
-                                  height={70}
+                                  // height={70}
                                   src={product.product.imageCover}
                                   alt={product.product.title}
                                 />
