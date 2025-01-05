@@ -2,12 +2,12 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useEffect, useState } from "react";
 import { FaWindowClose } from "react-icons/fa";
-import { toast } from "react-toastify";
 import "./Modal.css";
 import Swal from "sweetalert2";
 
 export default function Modal() {
   const [close, setclose] = useState(false);
+  let userToken = localStorage.getItem("userToken");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -44,7 +44,7 @@ export default function Modal() {
 
   return (
     <>
-      {close ? (
+      {close && userToken != null && userToken != undefined ? (
         <div
           className="col-12 bigestdivemail"
           onClick={() => {
