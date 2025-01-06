@@ -17,6 +17,8 @@ export default function CartCheckout() {
       })
       .then((response) => {
         setcartItem(response?.data);
+        localStorage.setItem("cartId", response?.data?.cartId);
+        localStorage.setItem("cartOwner", response?.data?.data?.cartOwner);
         setloading(false);
       })
       .catch((err) => {

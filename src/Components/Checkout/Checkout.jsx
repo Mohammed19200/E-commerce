@@ -26,6 +26,8 @@ export default function Checkout() {
       })
       .then((data) => {
         setcartItem(data?.data?.numOfCartItems);
+        localStorage.setItem("cartId", data?.data?.cartId);
+        localStorage.setItem("cartOwner", data?.data?.data?.cartOwner);
       })
       .catch((err) => {
         console.log(err);
@@ -103,9 +105,7 @@ export default function Checkout() {
         <title>Checkout</title>
       </Helmet>
 
-      <h1 className="h3 py-2 text-center col-12">
-        Checkout
-      </h1>
+      <h1 className="h3 py-2 text-center col-12">Checkout</h1>
 
       <div className="col-11 col-sm-10 col-md-9 col-lg-6 registerform SeconddivCHeckout wow animate__animated animate__fadeInLeftBig animate__slow">
         <form

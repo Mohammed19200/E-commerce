@@ -1,7 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import "./NavBar.css";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Usercontext } from "../../Context/UserToken";
 import Logo from "../../assets/Shopping_Bag_Online_Market_Logo-transformed (1).png";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdFavoriteBorder } from "react-icons/md";
@@ -9,16 +7,15 @@ import { MdHome } from "react-icons/md";
 import { FaShopify } from "react-icons/fa6";
 import { MdFindInPage } from "react-icons/md";
 import { IoMdArrowRoundDown } from "react-icons/io";
-import { toast } from "react-toastify";
 import { MdLogout } from "react-icons/md";
 import login from "../../assets/login (1).png";
 import register from "../../assets/register.png";
 import Swal from "sweetalert2";
+import "./NavBar.css";
 
 export default function Navtest() {
   let CartOwner = localStorage.getItem("cartOwner");
-
-  const { usertoken, setusertoken } = useContext(Usercontext);
+  let usertoken = localStorage.getItem("userToken");
   let navigate = useNavigate();
 
   function logout() {
@@ -27,7 +24,6 @@ export default function Navtest() {
     localStorage.removeItem("EmailOffer");
     localStorage.removeItem("cartId");
     localStorage.removeItem("cartOwner");
-    setusertoken("");
     navigate("/");
     Swal.fire({
       text: `You Logged out Successfully.`,

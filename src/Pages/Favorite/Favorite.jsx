@@ -29,6 +29,7 @@ export default function Favorite() {
       )
       .then((response) => {
         if (response?.data?.status == "success") {
+          localStorage.setItem("cartOwner", response?.data?.data?.cartOwner);
           Swal.fire({
             text: "This Product Added Successfully To Your Cart",
             icon: "success",

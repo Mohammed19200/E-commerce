@@ -28,6 +28,7 @@ export default function ProductCard({ product }) {
       )
       .then((response) => {
         if (response?.data?.status == "success") {
+          localStorage.setItem("cartOwner", response?.data?.data?.cartOwner);
           Swal.fire({
             text: `${response?.data?.message}`,
             icon: "success",

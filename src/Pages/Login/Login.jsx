@@ -3,14 +3,11 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { Usercontext } from "../../Context/UserToken";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 
 export default function Login() {
   let Navigate = useNavigate();
-  let { setusertoken } = useContext(Usercontext);
 
   async function loginsubmit(values) {
     let { data } = await axios
@@ -25,7 +22,6 @@ export default function Login() {
     if (data.message == "success") {
       localStorage.setItem("userToken", data.token);
       localStorage.setItem("userInfo", data.user.name);
-      setusertoken(data.token);
       Navigate("/");
       Swal.fire({
         text: `Welcome to our website, ${localStorage.getItem("userInfo")}.`,
