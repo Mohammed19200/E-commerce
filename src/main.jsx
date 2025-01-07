@@ -3,8 +3,6 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import ProductOperationsprovider from "./Context/ProductOperations";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap";
-import "animate.css";
-import "./index.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "sweetalert2/src/sweetalert2.scss";

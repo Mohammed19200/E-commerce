@@ -1,198 +1,197 @@
-.navbarposition{
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 9999999999999 !important;
+.navbarposition {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999999999999 !important;
 }
 
 .linkpagesdropdown {
-    text-decoration: none !important;
-    color: black !important;
-    padding: 1rem;
+  text-decoration: none !important;
+  color: black !important;
+  padding: 1rem;
 }
 
-.linkpagesdropdown:hover {
-    color: orange !important;
+.linkpagesdropdown:hover,
+.linkpagesdropdown:focus {
+  color: orange !important;
 }
 
 .buttonstylediv {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .navlinks {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .dropdownmenu {
-    display: flex !important;
-    flex-direction: column !important;
-    flex-wrap: wrap !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: wrap !important;
 }
 
 .container-fluid {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 3rem !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 3rem !important;
 }
 
 .imglogo {
-    height: 3rem;
-    cursor: pointer;
+  height: 3rem;
+  cursor: pointer;
 }
 
 .linkNavbar {
-    text-decoration: none !important;
-    color: black !important;
-    font-size: 1.7rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
+  text-decoration: none !important;
+  color: black !important;
+  font-size: 1.7rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .divlinkNavbar {
-    width: 2.7rem;
-    height: 2.7rem;
-    border-radius: 50%;
-    background-color: orange;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none !important;
-    color: white !important;
-    font-size: 1.4rem;
-    cursor: pointer;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  background: orange;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  color: white !important;
+  font-size: 1.4rem;
+  cursor: pointer;
 }
 
 .divlinkNavbarshopping {
-    width: 2.7rem;
-    height: 2.7rem;
-    border-radius: 50%;
-    background-color: orange;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    text-decoration: none !important;
-    color: white !important;
-    font-size: 1.4rem;
-    cursor: pointer;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  background: orange;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-decoration: none !important;
+  color: white !important;
+  font-size: 1.4rem;
+  cursor: pointer;
 }
 
 .h1cartt {
-    position: absolute;
-    top: -3px;
-    right: -14px;
-    color: black !important;
+  position: absolute;
+  top: -3px;
+  right: -14px;
+  color: black !important;
 }
 
 .arrowstyle {
-    position: absolute;
-    top: 38px;
-    right: 0px;
-    color: orange !important;
+  position: absolute;
+  top: 38px;
+  right: 0px;
+  color: orange !important;
 }
 
 .bigdivnavlinks {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    gap: 2rem;
-    padding: 1rem 0rem;
-    margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 2rem;
+  padding: 1rem 0rem;
+  margin: auto;
 }
 
 .divlinkNavbarshopping:hover,
 .divlinkNavbar:hover {
-    background: none !important;
-    border: 1px solid orange !important;
-    color: orange !important;
+  background: none !important;
+  border: 1px solid orange !important;
+  color: orange !important;
 }
 
 .logoutandinbtn {
-    border: 1px solid orange;
-    padding: 0.38rem 1.3rem;
-    border-radius: 0.4rem;
-    background: none;
+  border: 1px solid orange;
+  padding: 0.38rem 1.3rem;
+  border-radius: 0.4rem;
+  background: none;
 }
 
 .logoutandinbtn:hover {
-    border: 0;
-    outline: 0;
-    background-color: orange;
-    color: white;
+  border: 0;
+  outline: 0;
+  background-color: orange;
+  color: white;
 }
 
 .registerbtn {
-    padding: 0.38rem 1.3rem;
-    border-radius: 0.4rem;
-    border: 0;
-    outline: 0;
-    background-color: orange;
-    color: white;
+  padding: 0.38rem 1.3rem;
+  border-radius: 0.4rem;
+  border: 0;
+  outline: 0;
+  background-color: orange;
+  color: white;
 }
 
 .registerbtn:hover {
-    border: 1px solid orange;
-    background: none;
-    color: black;
+  border: 1px solid orange;
+  background: none;
+  color: black;
 }
 
 /* Media Screen */
 
 @media screen and (max-width: 991.5px) {
-  
-    .container-fluid {
-        gap: 0rem !important;
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-    }
+  .container-fluid {
+    gap: 0rem !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
 
-    .buttonstylediv {
-          display: flex;
+  .buttonstylediv {
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;
     justify-content: flex-end;
     align-items: center;
     gap: 0.5rem;
-    } 
+  }
 
-
-      .navlinks {
-        display: flex !important;
+  .navlinks {
+    display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
     align-content: center !important;
     padding: 1rem 0rem !important;
-    justify-content: flex-start !important;   
+    justify-content: flex-start !important;
     gap: 1rem !important;
-}
+  }
 
-.navbar-collapse {
+  .navbar-collapse {
     flex-basis: 100%;
     flex-grow: 1;
     align-items: center;
@@ -202,39 +201,35 @@
     align-content: center;
     justify-content: space-between;
     align-items: center;
-}
-
-
+  }
 }
 
 @media screen and (min-width: 989px) and (max-width: 991.5px) {
-    .container-fluid {
-        align-items: baseline !important;
-        gap: 0rem !important;
-    }
+  .container-fluid {
+    align-items: baseline !important;
+    gap: 0rem !important;
+  }
 }
 
 @media screen and (max-width: 577.5px) {
+  .navlinks {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-content: center !important;
+    padding: 1rem 0rem !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    align-items: center !important;
+  }
 
-    .navlinks {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        align-content: center !important;
-        padding: 1rem 0rem !important;
-        justify-content: center !important;
-        gap: 1rem !important;
-        align-items: center !important;
-    }
-
-    .buttonstylediv {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-    }
-
+  .buttonstylediv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
 }

@@ -152,6 +152,7 @@ export default function Categories() {
                     <Button
                       onClick={() => {
                         show(categorey.name);
+                        setinputvalue("");
                       }}
                       data-bs-toggle="modal"
                       data-bs-target="#staticBackdrop"
@@ -182,6 +183,7 @@ export default function Categories() {
                     onChange={(e) => setinputvalue(e.target.value)}
                     className="form-control col-12"
                     type="text"
+                    value={inputvalue}
                     placeholder="Search By Title In Categories"
                   />
                 </div>

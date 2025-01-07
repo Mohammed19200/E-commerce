@@ -1,99 +1,100 @@
 .linksfooter {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 0.9rem;
-    justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.9rem;
+  justify-content: flex-end;
 }
 
 .divimgfooter {
-    text-align: center;
+  text-align: center;
 }
 
 .bigdivfooter {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-between;
-    padding: 1rem 0rem;
-    align-items: baseline;
-    margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  padding: 1rem 0rem;
+  align-items: baseline;
+  margin: auto;
 }
 
 .linkFooter {
-    text-decoration: none !important;
-    color: black !important;
-    border: 0 !important;
+  text-decoration: none !important;
+  color: black !important;
+  border: 0 !important;
 }
 
-.linkFooter:hover {
-    text-decoration: none !important;
-    color: black !important;
-    border-bottom: 3px solid orange !important;
+.linkFooter:hover,
+.linkFooter:focus {
+  text-decoration: none !important;
+  color: black !important;
+  border-bottom: 3px solid orange !important;
 }
 
 .linkpagesdropdownfooter {
-    text-decoration: none !important;
-    color: black !important;
-    padding: 1rem;
-    border: 0 !important;
+  text-decoration: none !important;
+  color: black !important;
+  padding: 1rem;
+  border: 0 !important;
 }
 
-.linkpagesdropdownfooter:hover {
-    text-decoration: none !important;
-    color: orange !important;
+.linkpagesdropdownfooter:hover,
+.linkpagesdropdownfooter:focus {
+  text-decoration: none !important;
+  color: orange !important;
 }
 
 .bigestdivfooter {
-    background-color: rgb(248 249 250) !important;
+  background-color: rgb(248 249 250) !important;
 }
 
 /* media screen */
 @media screen and (min-width: 576.5px) and (max-width: 991.5px) {
-    .bigdivfooter {
-        justify-content: space-evenly;
-    }
+  .bigdivfooter {
+    justify-content: space-evenly;
+  }
 }
 
 @media screen and (max-width: 767.5px) {
-    .bigdivfooter {
-        justify-content: center;
-    }
+  .bigdivfooter {
+    justify-content: center;
+  }
 
-    .linksfooter {
-        justify-content: center;
-        gap: 1.3rem;
-        flex-wrap: wrap;
-    }
+  .linksfooter {
+    justify-content: center;
+    gap: 1.3rem;
+    flex-wrap: wrap;
+  }
 
-    .divimgfooter {
-        text-align: right;
-        padding: 0rem 1rem;
-    }
+  .divimgfooter {
+    text-align: right;
+    padding: 0rem 1rem;
+  }
 
-    .pargfooter {
-        text-align: left;
-        padding: 0rem 1rem;
-    }
+  .pargfooter {
+    text-align: left;
+    padding: 0rem 1rem;
+  }
 }
 
 @media screen and (max-width: 575.5px) {
+  .pargfooter {
+    text-align: center;
+  }
 
-    .pargfooter {
-        text-align: center;
-    }
+  .linksfooter {
+    justify-content: center;
+    gap: 1.1rem;
+  }
 
-    .linksfooter {
-        justify-content: center;
-        gap: 1.1rem;
-    }
+  .divimgfooter {
+    text-align: center;
+  }
 
-    .divimgfooter {
-        text-align: center;
-    }
-
-    .bigdivfooter {
-        gap: 1rem;
-    }
+  .bigdivfooter {
+    gap: 1rem;
+  }
 }

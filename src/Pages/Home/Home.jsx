@@ -158,7 +158,7 @@ export default function Home() {
       </div>
 
       <div className="col-12 categoriesinhome wow animate__animated animate__backInRight animate__slow">
-        <h1 className="h3 text-center col-12 animate__animated animate__fadeOut animate__infinite animate__slow">
+        <h1 className="h3 text-center col-12 animate__animated animate__shakeX animate__infinite animate__slower">
           Special Offers
         </h1>
         <SpecialOffers />
