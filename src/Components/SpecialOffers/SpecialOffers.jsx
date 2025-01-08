@@ -5,9 +5,7 @@ import ProductCard from "../ProductCard/ProductCard";
 
 export default function SpecialOffers() {
   function ShowData() {
-    return axios.get(
-      `https://ecommerce.routemisr.com/api/v1/products?limit=10`
-    );
+    return axios.get(`https://ecommerce.routemisr.com/api/v1/products?limit=5`);
   }
 
   let { data, isLoading } = useQuery("Specialoffer", ShowData);

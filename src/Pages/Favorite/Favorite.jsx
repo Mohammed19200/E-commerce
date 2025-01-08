@@ -181,14 +181,6 @@ export default function Favorite() {
                     </div>
                   );
                 })}
-
-                {favoriteItem?.count != 0 ? (
-                  <h1 className="favoriteitem col-12 h5">
-                    Num Of Favorite Items : {favoriteItem?.count}
-                  </h1>
-                ) : (
-                  ""
-                )}
               </div>
             ) : (
               ""
