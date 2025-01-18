@@ -53,7 +53,7 @@ export default function Contact() {
 
       <div>
         <div className="bigdivInfoContact wow animate__animated animate__fadeInDownBig animate__slow">
-          <h1 className="col-10 m-auto col-lg-12 H1Infobig animate__animated animate__flipInX animate__infinite animate__slow">
+          <h1 className="col-10 m-auto col-lg-12 H1Infobig">
             We're always eager to hear from you!
           </h1>
           <p className="col-10 m-auto col-lg-12 pInfobig">
@@ -102,7 +102,7 @@ export default function Contact() {
             className="col-12 formstyleContact"
             onSubmit={formik.handleSubmit}
           >
-            <h1 className="col-12 H1Infobig animate__animated animate__fadeOut animate__infinite animate__slow">
+            <h1 className="col-12 H1Infobig">
               Ask us anything here
             </h1>
 

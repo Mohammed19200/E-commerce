@@ -29,7 +29,7 @@ export default function Aboutus() {
 
       <div className="col-12 bigdivExplainAboutus wow animate__animated animate__fadeInDownBig animate__slow ">
         <div className="col-11 col-md-10 col-lg-5 col-xl-5 col-xxl-5 divExplainAboutus">
-          <h1 className="h1Aboutus h3 animate__animated animate__flipInX animate__infinite animate__slow">
+          <h1 className="h1Aboutus h3">
             Shopping E-Commerce
           </h1>
           <p className="PAboutus">
@@ -71,7 +71,7 @@ export default function Aboutus() {
 
       <div className="bigdivteamAboutus wow animate__animated animate__fadeInUpBig animate__slow">
         <h1
-          className="h2 col-11 col-md-12 animate__animated animate__fadeOut animate__infinite animate__slow"
+          className="h2 col-11 col-md-12"
           style={{ textAlign: "center" }}
         >
           Meet Our Team

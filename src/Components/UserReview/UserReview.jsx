@@ -153,7 +153,7 @@ export default function UserReview() {
         </div>
       </div>
 
-      <h1 className="h3 text-center col-10 col-md-9 m-auto animate__animated animate__flipInX animate__infinite animate__slow">
+      <h1 className="h3 text-center col-10 col-md-9 m-auto">
         We love our clients
       </h1>
       <p className=" text-center col-10 col-md-9 m-auto">
